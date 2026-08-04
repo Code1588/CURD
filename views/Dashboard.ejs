@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+    <div class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+            <h1 class="text-3xl font-bold text-gray-800">
+                Dashboard
+            </h1>
+
+            <a href="/image"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg shadow transition duration-300">
+                + Upload Image
+            </a>
+
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 py-10">
+
+        <h2 class="text-2xl font-semibold text-gray-700 mb-6">
+            Uploaded Images
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+            <% images.forEach((item)=> { %>
+
+                <div
+                    class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+
+                    <img src="/uploads/<%= item.image %>"
+                        class="w-full h-64 object-cover">
+
+                </div>
+
+            <% }) %>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
